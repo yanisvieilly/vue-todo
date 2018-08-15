@@ -1,8 +1,8 @@
 <template>
-<div>
-  <input v-model="newTodo">
-  <button @click="addTodo">Add todo</button>
-</div>
+  <div>
+    <input v-model="newTodo">
+    <button @click="addTodo">Add todo</button>
+  </div>
 </template>
 
 <script>

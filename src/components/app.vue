@@ -1,5 +1,5 @@
 <template>
-  <TodoList></TodoList>
+  <TodoList />
 </template>
 
 <script>

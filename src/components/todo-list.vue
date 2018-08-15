@@ -1,17 +1,16 @@
 <template>
-<div>
-  <ul>
-    <Todo
-      v-for="todo in todos"
-      :key="todo.id"
-      :todo="todo"
-      @remove-todo="removeTodo"
-      @change-todo="changeTodo"
-    >
-    </Todo>
-  </ul>
-  <NewTodo @add-todo="addTodo"></NewTodo>
-</div>
+  <div>
+    <ul>
+      <Todo
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo="todo"
+        @remove-todo="removeTodo"
+        @change-todo="changeTodo"
+      />
+    </ul>
+    <NewTodo @add-todo="addTodo" />
+  </div>
 </template>
 
 <script>
