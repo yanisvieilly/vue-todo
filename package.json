@@ -1,0 +1,7 @@
+{
+  "name": "vue-cyoa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yanis Vieilly <yanis.vieilly@gmail.com>",
+  "license": "MIT"
+}
