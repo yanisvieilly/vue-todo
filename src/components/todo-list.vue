@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Todo from "./todo.vue";
-import NewTodo from "./new-todo.vue";
+import Todo from "./todo";
+import NewTodo from "./new-todo";
 
 export default {
   components: {
