@@ -22,7 +22,7 @@ export default {
     Todo,
     NewTodo
   },
-  data: function() {
+  data() {
     return {
       todos: [
         { id: 0, name: "Do stuff", readOnly: false, done: true },
@@ -32,7 +32,7 @@ export default {
     };
   },
   methods: {
-    addTodo: function(newTodo) {
+    addTodo(newTodo) {
       const biggestId = Math.max(...this.todos.map(todo => todo.id));
 
       this.todos.push({
@@ -42,12 +42,12 @@ export default {
         done: false
       });
     },
-    changeTodo: function(id) {
-      const todo = this.todos.find(todo => todo.id === id);
+    changeTodo(id) {
+      const targetTodo = this.todos.find(todo => todo.id === id);
 
-      todo.done = !todo.done;
+      targetTodo.done = !targetTodo.done;
     },
-    removeTodo: function(id) {
+    removeTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
     }
   }

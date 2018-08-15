@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       newTodo: ""
     };
   },
   methods: {
-    addTodo: function() {
+    addTodo() {
       this.$emit("add-todo", this.newTodo);
       this.newTodo = "";
     }
