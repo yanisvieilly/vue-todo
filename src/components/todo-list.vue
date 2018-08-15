@@ -1,4 +1,28 @@
-Vue.component("todo-list", {
+<template>
+<div>
+  <ul>
+    <Todo
+      v-for="todo in todos"
+      :key="todo.id"
+      :todo="todo"
+      @remove-todo="removeTodo"
+      @change-todo="changeTodo"
+    >
+    </Todo>
+  </ul>
+  <NewTodo @add-todo="addTodo"></NewTodo>
+</div>
+</template>
+
+<script>
+import Todo from "./todo.vue";
+import NewTodo from "./new-todo.vue";
+
+export default {
+  components: {
+    Todo,
+    NewTodo
+  },
   data: function() {
     return {
       todos: [
@@ -27,20 +51,6 @@ Vue.component("todo-list", {
     removeTodo: function(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
     }
-  },
-  template: `
-    <div>
-      <ul>
-        <todo
-          v-for="todo in todos"
-          :key="todo.id"
-          :todo="todo"
-          @remove-todo="removeTodo"
-          @change-todo="changeTodo"
-        >
-        </todo>
-      </ul>
-      <new-todo @add-todo="addTodo"></new-todo>
-    </div>
-  `
-});
+  }
+};
+</script>

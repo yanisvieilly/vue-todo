@@ -1,4 +1,12 @@
-Vue.component("new-todo", {
+<template>
+<div>
+  <input v-model="newTodo">
+  <button @click="addTodo">Add todo</button>
+</div>
+</template>
+
+<script>
+export default {
   data: function() {
     return {
       newTodo: ""
@@ -9,11 +17,6 @@ Vue.component("new-todo", {
       this.$emit("add-todo", this.newTodo);
       this.newTodo = "";
     }
-  },
-  template: `
-    <div>
-      <input v-model="newTodo">
-      <button @click="addTodo">Add todo</button>
-    </div>
-  `
-});
+  }
+};
+</script>
