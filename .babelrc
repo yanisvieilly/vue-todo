@@ -1,3 +1,13 @@
 {
-  "presets": ["env", "stage-3"]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [">1%", "not ie 11", "not op_mini all"]
+        }
+      }
+    ],
+    "stage-3"
+  ]
 }
