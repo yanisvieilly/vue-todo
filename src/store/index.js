@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+import { postTodo } from "../api/todo";
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -29,6 +31,11 @@ const store = new Vuex.Store({
     },
     removeTodo: (state, id) => {
       state.todos = state.todos.filter(t => t.id !== id);
+    }
+  },
+  actions: {
+    addAsyncTodo: ({ commit }, name) => {
+      postTodo().then(() => commit("addTodo", name));
     }
   }
 });
