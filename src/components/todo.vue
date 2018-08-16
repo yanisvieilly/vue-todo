@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import store from "../store";
+import { mapMutations } from "vuex";
 
 export default {
   props: {
@@ -25,14 +25,7 @@ export default {
       required: true
     }
   },
-  methods: {
-    changeTodo() {
-      store.changeTodo(this.todo.id);
-    },
-    removeTodo() {
-      store.removeTodo(this.todo.id);
-    }
-  }
+  methods: mapMutations(["changeTodo", "removeTodo"])
 };
 </script>
 

@@ -12,22 +12,16 @@
 </template>
 
 <script>
-import store from "../store";
+import { mapState } from "vuex";
 
 import Todo from "./todo";
 import NewTodo from "./new-todo";
-
-window.store = store;
 
 export default {
   components: {
     Todo,
     NewTodo
   },
-  data() {
-    return {
-      todos: store.state.todos
-    };
-  }
+  computed: mapState(["todos"])
 };
 </script>

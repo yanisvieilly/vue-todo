@@ -1,4 +1,9 @@
-export default {
+import Vue from "vue";
+import Vuex from "vuex";
+
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
   state: {
     todos: [
       { id: 0, name: "Do stuff", readOnly: false, done: true },
@@ -6,22 +11,26 @@ export default {
       { id: 2, name: "Reach goals", readOnly: false, done: false }
     ]
   },
-  addTodo(name) {
-    const biggestId = Math.max(...this.state.todos.map(todo => todo.id));
+  mutations: {
+    addTodo: (state, name) => {
+      const biggestId = Math.max(...state.todos.map(todo => todo.id));
 
-    this.state.todos.push({
-      id: biggestId + 1,
-      name,
-      readOnly: false,
-      done: false
-    });
-  },
-  changeTodo(id) {
-    const targetTodo = this.state.todos.find(t => t.id === id);
+      state.todos.push({
+        id: biggestId + 1,
+        name,
+        readOnly: false,
+        done: false
+      });
+    },
+    changeTodo: (state, id) => {
+      const targetTodo = state.todos.find(t => t.id === id);
 
-    targetTodo.done = !targetTodo.done;
-  },
-  removeTodo(id) {
-    this.state.todos = this.state.todos.filter(t => t.id !== id);
+      targetTodo.done = !targetTodo.done;
+    },
+    removeTodo: (state, id) => {
+      state.todos = state.todos.filter(t => t.id !== id);
+    }
   }
-};
+});
+
+export default store;

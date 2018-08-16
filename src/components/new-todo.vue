@@ -1,12 +1,12 @@
 <template>
   <div>
     <input v-model="newTodo">
-    <button @click="addTodo">Add todo</button>
+    <button @click="addTodoAndClearNewTodo">Add todo</button>
   </div>
 </template>
 
 <script>
-import store from "../store";
+import { mapMutations } from "vuex";
 
 export default {
   data() {
@@ -15,8 +15,9 @@ export default {
     };
   },
   methods: {
-    addTodo() {
-      store.addTodo(this.newTodo);
+    ...mapMutations(["addTodo"]),
+    addTodoAndClearNewTodo() {
+      this.addTodo(this.newTodo);
 
       this.newTodo = "";
     }
