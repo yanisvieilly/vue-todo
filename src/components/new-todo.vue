@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import store from "../store";
+
 export default {
   data() {
     return {
@@ -14,7 +16,8 @@ export default {
   },
   methods: {
     addTodo() {
-      this.$emit("add-todo", this.newTodo);
+      store.addTodo(this.newTodo);
+
       this.newTodo = "";
     }
   }

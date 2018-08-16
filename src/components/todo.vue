@@ -4,11 +4,11 @@
     <input
       :checked="todo.done"
       type="checkbox"
-      @click="$emit('change-todo', todo.id)"
+      @click="changeTodo(todo.id)"
     >
     <button
       :disabled="todo.readOnly"
-      @click="$emit('remove-todo', todo.id)"
+      @click="removeTodo(todo.id)"
     >
       &times;
     </button>
@@ -16,11 +16,21 @@
 </template>
 
 <script>
+import store from "../store";
+
 export default {
   props: {
     todo: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    changeTodo() {
+      store.changeTodo(this.todo.id);
+    },
+    removeTodo() {
+      store.removeTodo(this.todo.id);
     }
   }
 };
