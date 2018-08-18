@@ -1,14 +1,8 @@
-<template>
-  <div>
-    <ul>
-      <Todo
-        v-for="todo in todos"
-        :key="todo.id"
-        :todo="todo"
-      />
-    </ul>
-    <NewTodo />
-  </div>
+<template lang="pug">
+div
+  ul
+    Todo(v-for="todo in todos" :key="todo.id" :todo="todo")
+  NewTodo
 </template>
 
 <script>

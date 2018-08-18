@@ -1,9 +1,8 @@
-<template>
-  <div>
-    <input v-model="newTodo">
-    <button @click="addTodoAndClearNewTodo">Add todo</button>
-    <button @click="addAsyncTodoAndClearNewTodo">Add async todo</button>
-  </div>
+<template lang="pug">
+div
+  input(v-model="newTodo")
+  button(@click="addTodoAndClearNewTodo") Add todo
+  button(@click="addAsyncTodoAndClearNewTodo") Add async todo
 </template>
 
 <script>

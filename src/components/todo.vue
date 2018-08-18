@@ -1,18 +1,12 @@
-<template>
-  <li>
-    <span :class="{ done: todo.done }">{{ todo.name }}</span>
-    <input
-      :checked="todo.done"
-      type="checkbox"
-      @click="changeTodo(todo.id)"
-    >
-    <button
-      :disabled="todo.readOnly"
-      @click="removeTodo(todo.id)"
-    >
-      &times;
-    </button>
-  </li>
+<template lang="pug">
+li
+  span(:class="{ done: todo.done }") {{ todo.name }}
+  input(
+    :checked="todo.done"
+    type="checkbox"
+    @click="changeTodo(todo.id)"
+  )
+  button(:disabled="todo.readOnly" @click="removeTodo(todo.id)") &times;
 </template>
 
 <script>
