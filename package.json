@@ -5,6 +5,7 @@
   "author": "Yanis Vieilly <yanis.vieilly@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "pug": "^2.0.3",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.0",
     "vuex": "^3.0.1"
